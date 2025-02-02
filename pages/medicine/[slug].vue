@@ -1,6 +1,6 @@
 <template>
   <div v-if="medicine" class="container mx-auto px-4">
-    <img :src="medicine.img" :alt="medicine.name" />
+    <img :src="medicine.image" :alt="medicine.name" class="w-96" />
     <h1 id="anik-title">{{ medicine.name }}</h1>
     <p id="anik-medicine-type">Medicine type: {{ medicine.type }}</p>
     <p id="anik-medicine-category">
@@ -33,6 +33,10 @@ export default {
       const { data } = await useAsyncData(`medicine-${slug}`, () =>
         api.get(`/fetch/medicine/${slug}`)
       );
+      if (!data.value?.item) {
+        showError({ statusCode: 404, message: "Medicine not found" });
+        return;
+      }
       this.medicine = data.value.item;
     } catch (error) {
       console.error(error);
