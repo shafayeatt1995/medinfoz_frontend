@@ -83,7 +83,10 @@ export default {
     urls() {
       return [
         { name: "Medicine", to: { name: "index", hash: "#pricing" } },
-        { name: "Pharmaceutical", to: { name: "index", hash: "#faq" } },
+        {
+          name: "Pharmaceutical",
+          to: { name: "medicine-slug", params: { slug: "abecab" } },
+        },
         { name: "Doctor", to: { name: "index" } },
       ];
     },
