@@ -84,9 +84,7 @@ export default {
       return [
         { name: "Medicine", to: { name: "index", hash: "#pricing" } },
         { name: "Pharmaceutical", to: { name: "index", hash: "#faq" } },
-        { name: "Drag Class", to: { name: "index", hash: "#faq" } },
-        { name: "News", to: { name: "index", hash: "#faq" } },
-        { name: "Jobs", to: { name: "index", hash: "#faq" } },
+        { name: "Doctor", to: { name: "index" } },
       ];
     },
     appName() {
