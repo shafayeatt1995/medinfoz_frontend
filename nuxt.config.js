@@ -9,8 +9,6 @@ export default defineNuxtConfig({
       BASE_URL: process.env.BASE_URL,
       API_URL: process.env.API_URL,
       AP2I_URL: process.env.AP2I_URL,
-      PADDLE_ENVIRONMENT: process.env.PADDLE_ENVIRONMENT,
-      PADDLE_TOKEN: process.env.PADDLE_TOKEN,
     },
   },
   app: {
