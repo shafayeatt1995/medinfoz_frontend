@@ -30,8 +30,10 @@ export default {
     try {
       const { api } = useApi();
       const { slug } = this.$route.params;
-      const { item } = await api.get(`/fetch/medicine/${slug}`);
-      this.medicine = item;
+      const { data } = await useAsyncData(`medicine-${slug}`, () =>
+        api.get(`/fetch/medicine/${slug}`)
+      );
+      this.medicine = data.value.item;
     } catch (error) {
       console.error(error);
     }
